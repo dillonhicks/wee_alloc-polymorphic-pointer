@@ -1,0 +1,20 @@
+[package]
+authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
+name = "smee_alloc_test"
+version = "0.1.0"
+
+[dependencies]
+rand = "0.4.2"
+quickcheck = "0.6.0"
+histo = "0.1.0"
+cfg-if = "0.1.2"
+
+[dependencies.smee_alloc]
+path = "../smee_alloc"
+default-features = false
+features = ["use_std_for_test_debugging", "nightly", "size_classes", "static_array_backend"]
+
+[features]
+size_classes = ["smee_alloc/size_classes"]
+extra_assertions = ["smee_alloc/extra_assertions"]
+static_array_backend = ["smee_alloc/static_array_backend"]
